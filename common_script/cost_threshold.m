@@ -1,4 +1,4 @@
-function conn_costed = cost_threshold(conn_matrix, threshold)
+function conn_binary = cost_threshold(conn_matrix, threshold)
 % 将n*n的功能连接矩阵设置阈值为0.15
 % conn_matrix: n*n的功能连接矩阵，对角线所有值为0
 % threshold: 阈值，默认为0.15
@@ -36,8 +36,8 @@ weights_mean = mean(nonzeros(conn_matrix));
 
 conn_costed = conn_matrix./weights_mean;
 
-% 
-% conn_binary = logical(conn_costed);
+
+conn_binary = logical(conn_costed);
 % G_obj = graph(conn_binary);
 % % 用conncomp判断图是否连通
 % C = conncomp(G_obj);
